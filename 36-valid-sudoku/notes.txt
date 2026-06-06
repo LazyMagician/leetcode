@@ -1,0 +1,97 @@
+VALID SUDOKU (LeetCode 36)
+
+Approach:
+---------
+Use 3 boolean matrices to track seen digits:
+
+1. row[9][9]   -> digits seen in each row
+2. col[9][9]   -> digits seen in each column
+3. boxes[9][9] -> digits seen in each 3x3 box
+
+Each column index (0-8) represents digits 1-9.
+
+Example:
+row[2][4] = true
+=> digit 5 already exists in row 2
+
+--------------------------------------------------
+
+Algorithm:
+----------
+1. Traverse every cell in the board.
+2. Ignore '.' cells.
+3. Convert character digit to integer:
+      num = board[i][j] - '0'
+4. Check:
+      row[i][num-1]
+      col[j][num-1]
+      boxes[boxNum][num-1]
+5. If any is already true:
+      return false
+6. Otherwise mark all three as true.
+7. If traversal completes:
+      return true
+
+--------------------------------------------------
+
+3x3 Box Formula:
+----------------
+boxNum = (i / 3) * 3 + (j / 3)
+
+Box numbering:
+
+0 1 2
+3 4 5
+6 7 8
+
+Examples:
+(0,0) -> 0
+(2,8) -> 2
+(4,4) -> 4
+(8,8) -> 8
+
+--------------------------------------------------
+
+Why num - 1 ?
+-------------
+Digits are 1-9 but array indices are 0-8.
+
+Digit 1 -> index 0
+Digit 2 -> index 1
+...
+Digit 9 -> index 8
+
+--------------------------------------------------
+
+Duplicate Detection:
+--------------------
+Row:
+    if(row[i][num-1]) return false;
+
+Column:
+    if(col[j][num-1]) return false;
+
+Box:
+    if(boxes[boxNum][num-1]) return false;
+
+--------------------------------------------------
+
+Complexity:
+-----------
+Time  : O(81) = O(1)
+Space : O(81 * 3) = O(1)
+
+--------------------------------------------------
+
+Revision Shortcut:
+------------------
+For each non-empty cell:
+1. Find digit.
+2. Find box number using:
+      (i/3)*3 + (j/3)
+3. Check row, column, and box.
+4. If already seen -> false.
+5. Else mark as seen.
+
+Key Formula to Remember:
+boxNum = (i/3)*3 + (j/3)
