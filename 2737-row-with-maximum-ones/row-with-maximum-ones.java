@@ -3,19 +3,18 @@ class Solution {
         
         int ones = 0;
         int maxOnes = 0;
-        int ind = 0;
+        int index = 0;
         for(int i=0;i<mat.length;i++){
             for(int j=0;j<mat[0].length;j++){
                 if(mat[i][j] == 1)
                     ones++;
             }
-            // System.out.println(i+" "+" "+ones+" "+maxOnes);
             if(ones > maxOnes){
                 maxOnes = ones;
-                ind = i;
+                index = i;
             }
             ones =0 ;
         }
-        return new int[] {ind,maxOnes};
+        return new int[] {index,maxOnes};
     }
 }
