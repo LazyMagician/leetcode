@@ -3,7 +3,8 @@ class Solution {
         
         // int rotateParam = k%nums.length;
         
-        int l=0,r=nums.length-1,size=nums.length;
+        int l=0,r=nums.length-1;
+        int size=nums.length;
         if(k%size ==0){
             return;
         }
