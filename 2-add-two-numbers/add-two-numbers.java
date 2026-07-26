@@ -29,7 +29,7 @@ class Solution {
                 head = node;
                 curr =head;
             }else{
-                ListNode node = new ListNode(sum%10);
+                ListNode node= new ListNode(sum%10);
                 curr.next = node;
                 curr = curr.next;
             }
