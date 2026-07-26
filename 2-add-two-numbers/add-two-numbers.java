@@ -18,25 +18,22 @@ class Solution {
             int sum = carry;
             if(l1 != null){
                 sum += l1.val;
+                l1 = l1.next;
             }
             if(l2 != null){
                 sum += l2.val;
+                l2 = l2.next;
             }
             carry = sum/10;
-
+	    ListNode node = new ListNode(sum%10);
             if(head == null){
-                ListNode node = new ListNode(sum%10);
                 head = node;
                 curr =head;
             }else{
-                ListNode node= new ListNode(sum%10);
                 curr.next = node;
                 curr = curr.next;
             }
-            if(l1!= null)
-            l1 = l1.next;
-            if(l2 != null)
-            l2 = l2.next;
+         
 
 
         }
@@ -46,3 +43,4 @@ class Solution {
 
  
 }
+
