@@ -2,7 +2,7 @@ class Solution {
     public int evalRPN(String[] tokens) {
         
         Stack<Integer> operands = new Stack<>();
-        final Set<String> operators = Set.of("+","-","*","/");
+        List<String> operators = Arrays.asList("+","-","*","/");
         if(tokens.length == 0)
             return 0;
         for(String token:tokens){
