@@ -13,7 +13,7 @@ class MinStack {
     }
     
     public void pop() {
-        int topEle = stack.pop();
+        int topEle =stack.pop();
         if(minStack.peek() == topEle)
             minStack.pop();
     }
