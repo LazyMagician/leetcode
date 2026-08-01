@@ -35,10 +35,7 @@ class MinStack {
     }
     
     public int getMin() {
-        if(minStackLen != 0)
             return  minStack.get(minStackLen-1);
-        else
-            return 0;
     }
 }
 
