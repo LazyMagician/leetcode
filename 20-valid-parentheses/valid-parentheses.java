@@ -8,7 +8,7 @@ class Solution {
             if(bracket == '(' || bracket == '[' || bracket == '{'){
                 stack.push(bracket);
             }
-            if(!stack.isEmpty()){
+            else if(!stack.isEmpty()){
                 if(bracket == ')'){
                     if(stack.peek() == '(')
                         stack.pop();
