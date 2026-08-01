@@ -2,9 +2,10 @@ class Solution {
     public boolean isValid(String s) {
         if(s.isEmpty())
         return true;
-        Deque<Character> stack = new ArrayDeque<>();
+        Stack<Character> stack = new Stack<>();
 
-        for(Character bracket:s.toCharArray()){
+        for(int i=0;i<s.length();i++){
+            char bracket = s.charAt(i);
             if(bracket == '(' || bracket == '[' || bracket == '{'){
                 stack.push(bracket);
             }
