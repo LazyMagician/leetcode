@@ -16,7 +16,7 @@ class Solution {
                         return false;
                     }
                 }
-                 if(bracket == ']'){
+                else if(bracket == ']'){
                     if(stack.peek() == '[')
                         stack.pop();
                     else{
