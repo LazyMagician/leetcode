@@ -20,9 +20,6 @@ class Solution {
 
 
     public TreeNode buildBinaryTree(int[] preorder, int[] inorder, int preIdx, int inStart, int inEnd){
-        // System.out.println("preIdx - preorder.length - inStart - inEnd");
-
-        // System.out.println(preIdx+" "+preorder.length +" "+inStart +" "+ inEnd);
         if(preIdx >= preorder.length || inStart > inEnd ) return null;
 
         TreeNode root = new TreeNode(preorder[preIdx]);
@@ -37,7 +34,6 @@ class Solution {
     }
 
     public Integer findIdx(int[] arr, int value, int start, int end){
-        // System.out.println(start+" "+end);
         for(int i=start;i<=end;i++){
             if(arr[i] == value) return i;
         }
