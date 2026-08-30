@@ -2,10 +2,9 @@ class Solution {
     public int rob(int[] nums) {
         int houselen = nums.length;
         if( houselen == 1 ) return nums[0];
-        int firstHouse =nums[0], secondHouse = Integer.max(nums[0],nums[1]), currHouse = 0;
+        int firstHouse =nums[0], secondHouse = Integer.max(nums[0],nums[1]), currHouse = secondHouse;
 
         if( houselen == 2 ) return secondHouse;
-        currHouse = Integer.max(firstHouse,secondHouse);
         for(int i=2;i<houselen-1;i++){
             currHouse = Integer.max(firstHouse+nums[i],secondHouse);
             firstHouse = secondHouse;
