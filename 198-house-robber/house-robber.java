@@ -1,15 +1,20 @@
 class Solution {
     public int rob(int[] nums) {
-        int houseLen = nums.length;
-        int[] maxRob = new int[houseLen];
+        int houselen = nums.length;
 
-        if(houseLen <= 1) return nums[0];
-        maxRob[0] = nums[0];
-        maxRob[1] = Integer.max(maxRob[0],nums[1]);
+        if(houselen == 1) return nums[0];
+        int firstHouse =nums[0], secondHouse =Integer.max(nums[0],nums[1]), currHouse=0;
 
-        for(int i =2; i< houseLen;i++){
-            maxRob[i] = Integer.max(maxRob[i-1],maxRob[i-2]+nums[i]);
-        }       
-        return maxRob[houseLen-1];
+        if(houselen == 2) return secondHouse;
+        
+        for(int i=2;i<houselen;i++){
+            currHouse = Integer.max(firstHouse+nums[i],secondHouse);
+            firstHouse = secondHouse;
+            secondHouse = currHouse;
+        }
+
+        return currHouse;
+
+        
     }
 }
